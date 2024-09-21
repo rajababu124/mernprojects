@@ -16,7 +16,7 @@ const errorHandler = require('./middlewares/errorHandler');
 app.use(express.json())
 // Middlewares 
 const coresOptions = {
-    origin: ["http://localhost:5173"],
+    origin: ["https://rajacoded.netlify.app"],
     credentials: true
 }
 app.use(cores(coresOptions))
