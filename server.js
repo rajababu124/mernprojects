@@ -1,7 +1,7 @@
 require('dotenv').config();
 const cores = require('cors')
 const passport = require('passport');
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/authRoutes');
 require('dotenv').config(); // Load environment variables
 require('./config/passport'); // Passport configuration
 const express = require('express');
@@ -16,7 +16,8 @@ const errorHandler = require('./middlewares/errorHandler');
 app.use(express.json())
 // Middlewares 
 const coresOptions = {
-    origin: ["https://rajacoded.netlify.app"],
+    origin: ["http://localhost:5173"],
+    // origin: ["https://rajacoded.netlify.app"],
     credentials: true
 }
 app.use(cores(coresOptions))
