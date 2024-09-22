@@ -18,8 +18,7 @@ router.post('/register', async (req, res) => {
         }
 
         // Create new user
-        user = new User({ name, email, password });
-        await user.save();
+        user = await User.create({ name, email, password });
 
         // Create JWT Token
         const payload = { id: user.id };
